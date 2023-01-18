@@ -1,0 +1,9 @@
+###CREATE USER
+POST http://localhost:3000/auth/signup
+content-Type: application/json
+
+{
+"email":"khodzapro@gmail.com",
+"password":"2003qwerty"
+}
+ 
