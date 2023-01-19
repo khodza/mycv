@@ -7,3 +7,21 @@ content-Type: application/json
 "password":"2003qwerty"
 }
  
+###GET USER BY ID
+GET http://localhost:3000/auth/1
+
+###GET USERS BY EMAIL
+GET http://localhost:3000/auth?email=khodzapro@gmail.com
+
+###UPDATE USER 
+
+PATCH http://localhost:3000/auth/231341
+content-Type: application/json
+
+{
+    "email":"prostrel4ik@gmail.com"
+}
+
+###DELETE USER
+
+DELETE http://localhost:3000/auth/1
