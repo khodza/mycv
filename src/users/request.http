@@ -4,11 +4,11 @@ content-Type: application/json
 
 {
 "email":"khodzapro@gmail.com",
-"password":"2003qwerty"
+"password":"2003qwerty" 
 }
  
 ###GET USER BY ID
-GET http://localhost:3000/auth/1
+GET http://localhost:3000/auth/2
 
 ###GET USERS BY EMAIL
 GET http://localhost:3000/auth?email=khodzapro@gmail.com
