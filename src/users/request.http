@@ -1,5 +1,21 @@
+###GET CURRENTLY LOGED IN USER
+GET http://localhost:3000/auth/whoami
+
+
+### Sign out
+POST http://localhost:3000/auth/signout
 ###CREATE USER
 POST http://localhost:3000/auth/signup
+content-Type: application/json
+
+{
+"email":"khodzapro@gmail.com",
+"password":"2003qwerty" 
+}
+ 
+
+###SIGN IN USER
+POST http://localhost:3000/auth/signin
 content-Type: application/json
 
 {
@@ -24,4 +40,4 @@ content-Type: application/json
 
 ###DELETE USER
 
-DELETE http://localhost:3000/auth/1
+DELETE http://localhost:3000/auth/3

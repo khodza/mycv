@@ -11,6 +11,9 @@ export class UsersService {
     return this.repo.save(user);
   }
   findOne(id: number) {
+    if (!id) {
+      throw new NotFoundException('You are not logged in');
+    }
     return this.repo.findOneBy({ id });
   }
   find(email: string) {
