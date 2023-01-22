@@ -13,7 +13,10 @@ import {
 import { UsersService } from './users.service';
 import { CreateUserDTO } from './dtos/create-user.dto';
 import { UpdateUserDTO } from './dtos/update-user.dto';
-import { SerializeIntercepter } from 'src/interceptors/serialize.interceptor';
+import { UserDto } from './dtos/user.dto';
+import { Serialize } from 'src/interceptors/serialize.interceptor';
+import { User } from './user.entity';
+@Serialize(UserDto)
 @Controller('auth')
 export class UsersController {
   constructor(private usersService: UsersService) {}
@@ -22,7 +25,7 @@ export class UsersController {
     this.usersService.create(body.email, body.password);
   }
   @Get('/:id')
-  @UseInterceptors(SerializeIntercepter)
+  // @UseInterceptors(new SerializeIntercepter(UserDto))
   async findUser(@Param('id') id: string) {
     const user = await this.usersService.findOne(+id);
     if (!user) throw new NotFoundException('user not found');
