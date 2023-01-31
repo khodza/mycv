@@ -2,7 +2,6 @@ import {
   BadRequestException,
   Injectable,
   NotFoundException,
-  Session,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { promisify } from 'util';
@@ -16,7 +15,7 @@ export class AuthService {
   async signup(email: string, password: string) {
     const users = await this.usersService.find(email);
     if (users.length) {
-      new BadRequestException('email in use');
+      throw new BadRequestException('email in use');
     }
     const salt = randomBytes(8).toString('hex');
     const hash = (await scrypt(password, salt, 32)) as Buffer;
