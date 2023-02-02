@@ -1,0 +1,12 @@
+POST http://localhost:3000/reports
+content-Type: application/json
+
+{
+    "make":"tayota",
+    "model":"corolla",
+    "year":1980,
+    "mileage":100000,
+    "lng":0,
+    "lat":0,
+    "price":50000
+}
