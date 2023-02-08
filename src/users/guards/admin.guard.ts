@@ -10,7 +10,6 @@ export class AdminGuard implements CanActivate {
     if (!request.currentUser) {
       return false;
     }
-
     return request.currentUser.admin;
   }
 }
