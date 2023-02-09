@@ -5,7 +5,7 @@ GET http://localhost:3000/auth/whoami
 ### Sign out
 POST http://localhost:3000/auth/signout
 ###CREATE USER
-POST http://localhost:3000/auth/signup
+POST https://git.heroku.com/stormy-falls-62014.git/auth/signup
 content-Type: application/json
 
 {
